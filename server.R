@@ -26,7 +26,7 @@ shinyServer(function(input, output, session){
     
                 # type = 'lineChart')
     # h1$chart(width=1200, height=500, tooltipContent = "#! function(key, x, y, e)")
-    h1$xAxis(axisLabel = 'Lesiure Time Physical Activity (MET hours per week)')
+    h1$xAxis(axisLabel = 'Leisure Time Physical Activity (MET hours per week)')
     h1$yAxis(axisLabel = "RR", width = 30, height = 500)
     h1$yAxis(tickFormat = "#! function(d) {return d3.round(d, 2);} !#")
     # h1$chart(margin=list(left= 30, right = 30)) 
