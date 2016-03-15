@@ -4,3 +4,5 @@ scA <- read.csv("data/scenario-A.csv", as.is = T, check.names=FALSE)
 scB <- read.csv("data/scenario-B.csv", as.is = T, check.names=FALSE)
 scC <- read.csv("data/scenario-C.csv", as.is = T, check.names=FALSE)
 scD <- read.csv("data/scenario-D.csv", as.is = T, check.names=FALSE)
+
+summary_table <- read.csv("data/table.csv", as.is = T, check.names = FALSE)
