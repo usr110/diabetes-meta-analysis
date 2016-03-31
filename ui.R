@@ -15,13 +15,46 @@ shinyUI(fluidPage(
     )
   ),
   fluidRow(
-    column(width = 10,
-           showOutput("plotMetaAnalysis","nvd3")
+    column(width = 6,
+           #showOutput("plotScenarioA", "highcharts")
+           plotlyOutput("plotScenarioA")
     ),
-    column(width = 2,
-           radioButtons(inputId = "inSc", label = "Select a Scenario:", choices = choices, inline = FALSE)
+    
+    column(width = 6,
+           #showOutput("plotScenarioB","highcharts")
+           plotlyOutput("plotScenarioB")
     )
   ),
+  
+  
+  fluidRow(
+    
+    column(width = 6,downloadButton('downloadDatascA', 'Download Scenario A CSV Data') ),
+    column(width = 6,downloadButton('downloadDatascB', 'Download Scenario B CSV Data') )
+  ),
+  
+  
+  fluidRow(
+    column(width = 6,
+           plotlyOutput("plotScenarioC")
+           # showOutput("plotScenarioC","highcharts")
+    ),
+    column(width = 6,
+           plotlyOutput("plotScenarioD")
+           #showOutput("plotScenarioD","highcharts")
+    )
+  ),
+  
+  fluidRow(
+    
+    column(width = 6,downloadButton('downloadDatascC', 'Download Scenario C CSV Data') ),
+    column(width = 6,downloadButton('downloadDatascD', 'Download Scenario D CSV Data') )
+    
+  ),
+  fluidRow(
+    column(width = 12, br())
+  ),
+  
   fluidRow(
     column(width = 12,
            a(id = "help", "Help?", href = "#"),
@@ -42,7 +75,7 @@ shinyUI(fluidPage(
                            MVPA=4.5MET, and VPA=8 MET in Scenarios A and B; and LPA=2 MET, MVPA=3.5MET, 
                            and VPA=7 MET in Scenarios C and D)."))
              
-             ))
-           )
-             )
+           ))
+    )
+  )
 ))
