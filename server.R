@@ -32,8 +32,9 @@ shinyServer(function(input, output, session){
     gg <- ggplot(dataset, aes(dose, RR)) + 
       geom_line(data = dataset) + 
       geom_ribbon(data = dataset, aes(ymin=`Lower Band`,ymax=`Higher Band`),alpha=0.4) +
-      coord_cartesian(ylim = c(0, 1)) +
-      coord_cartesian(xlim = c(0, 70)) +
+      coord_cartesian(ylim = c(0, 1), xlim = c(0, 70)) +
+      scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0)) + 
+      # coord_cartesian(xlim = c(0, 70)) +
       xlab("\nLeisure Time Physical Activity (LTPA) MET.hr/week") +
       ylab("\nRelative Risk\n") +
       # , axis.title.y=element_text(margin=margin(0,20,0,0))
