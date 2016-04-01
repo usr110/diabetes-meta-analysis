@@ -17,10 +17,36 @@ shinyUI(fluidPage(
   ),
   fluidRow(
     column(width = 6,
-           plotlyOutput("plotScenarioA")
+           plotlyOutput("plotScenarioA"),
+           fluidRow(
+             column(width = 6,
+                    a(id = "scAHelp", "Description", href = "#"),
+                    (hidden (div(
+                      id = "scAHelpText",
+                      helpText(HTML("Scenario A: 
+                      <ul>
+                      <li>Session duration: 45 minutes</li>
+                      <li>Intensity: MVPA = 4.5 MET/h; LPA= 3 MET/h; VPA= 8 MET/h</li>
+                      </ul>"))
+                    )))
+             )
+           )
     ),
     column(width = 6,
-           plotlyOutput("plotScenarioB")
+           plotlyOutput("plotScenarioB"),
+           fluidRow(
+             column(width = 6,
+                    a(id = "scBHelp", "Description", href = "#"),
+                    (hidden (div(
+                      id = "scBHelpText",
+                      helpText(HTML("Scenario B: 
+                      <ul>
+                      <li>Session duration: 30 minutes</li>
+                      <li>Intensity: MVPA = 4.5 MET/h; LPA= 3 MET/h; VPA= 8 MET/h</li>
+                      </ul>"))
+                    )))
+             )
+           )
     )
   ),
   
@@ -34,10 +60,36 @@ shinyUI(fluidPage(
   
   fluidRow(
     column(width = 6,
-           plotlyOutput("plotScenarioC")
+           plotlyOutput("plotScenarioC"),
+           fluidRow(
+             column(width = 6,
+                    a(id = "scCHelp", "Description", href = "#"),
+                    (hidden (div(
+                      id = "scCHelpText",
+                      helpText(HTML("Scenario C: 
+                                    <ul>
+                                    <li>Session duration: 45 minutes</li>
+                                    <li>Intensity: MVPA = 3.5 MET/h; LPA= 2 MET/h; VPA= 7 MET/h</li>
+                                    </ul>"))
+                      )))
+                      )
+                      )
     ),
     column(width = 6,
-           plotlyOutput("plotScenarioD")
+           plotlyOutput("plotScenarioD"),
+           fluidRow(
+             column(width = 6,
+                    a(id = "scDHelp", "Description", href = "#"),
+                    (hidden (div(
+                      id = "scDHelpText",
+                      helpText(HTML("Scenario D: 
+                      <ul>
+                      <li>Session duration: 30 minutes</li>
+                      <li>Intensity: MVPA = 3.5 MET/h; LPA= 2 MET/h; VPA= 7 MET/h</li>
+                      </ul>"))
+                    )))
+             )
+           )
     )
   ),
   

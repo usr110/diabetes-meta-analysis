@@ -165,7 +165,11 @@ shinyServer(function(input, output, session){
     #       formatRound(columns = names(numericZoneColNames), digits=2)
   })
   
-  shinyjs::onclick("help", shinyjs::toggle(id = "helpText", anim = FALSE))
+  shinyjs::onclick("help", shinyjs::toggle(id = "helpText", anim = TRUE))
+  shinyjs::onclick("scAHelp", shinyjs::toggle(id = "scAHelpText", anim = TRUE))
+  shinyjs::onclick("scBHelp", shinyjs::toggle(id = "scBHelpText", anim = TRUE))
+  shinyjs::onclick("scCHelp", shinyjs::toggle(id = "scCHelpText", anim = TRUE))
+  shinyjs::onclick("scDHelp", shinyjs::toggle(id = "scDHelpText", anim = TRUE))
   
   # downloadHandler() takes two arguments, both functions.
   # The content function is passed a filename as an argument, and
