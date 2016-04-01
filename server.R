@@ -23,6 +23,8 @@ shinyServer(function(input, output, session){
   
   
   getPlot <- function (dataset, plotTitle){
+    
+    #par(oma=c(10,2,0,0) )
 
     outfile <- tempfile(fileext='.png')
     
@@ -34,7 +36,8 @@ shinyServer(function(input, output, session){
       coord_cartesian(ylim = c(0, 1)) +
       coord_cartesian(xlim = c(0, 70)) +
       xlab("Dose") +
-      ylab("Relative Risk") +
+      ylab("\nRelative Risk\n") +
+      theme(axis.title.y=element_text(margin=margin(0,20,0,0))) + 
       geom_vline(xintercept=summary_table$`LTPA MET.hrs/week`, linetype="dotted", alpha=0.4) + 
       ggtitle(plotTitle)
     
