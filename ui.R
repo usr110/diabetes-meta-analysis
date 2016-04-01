@@ -16,7 +16,8 @@ shinyUI(fluidPage(
     )
   ),
   fluidRow(
-    column(width = 6,
+    column(width = 5, offset= 1,
+           
            plotlyOutput("plotScenarioA"),
            fluidRow(
              column(width = 6,
@@ -32,7 +33,7 @@ shinyUI(fluidPage(
              )
            )
     ),
-    column(width = 6,
+    column(width = 5,
            plotlyOutput("plotScenarioB"),
            fluidRow(
              column(width = 6,
@@ -53,13 +54,13 @@ shinyUI(fluidPage(
   
   fluidRow(
     
-    column(width = 6,downloadButton('downloadDatascA', 'Download Scenario A CSV Data') ),
-    column(width = 6,downloadButton('downloadDatascB', 'Download Scenario B CSV Data') )
+    column(width = 5, offset = 1, downloadButton('downloadDatascA', 'Download Scenario A CSV Data') ),
+    column(width = 5, downloadButton('downloadDatascB', 'Download Scenario B CSV Data') )
   ),
   
   
   fluidRow(
-    column(width = 6,
+    column(width = 5, offset= 1,
            plotlyOutput("plotScenarioC"),
            fluidRow(
              column(width = 6,
@@ -75,7 +76,7 @@ shinyUI(fluidPage(
                       )
                       )
     ),
-    column(width = 6,
+    column(width = 5,
            plotlyOutput("plotScenarioD"),
            fluidRow(
              column(width = 6,
@@ -95,8 +96,8 @@ shinyUI(fluidPage(
   
   fluidRow(
     
-    column(width = 6,downloadButton('downloadDatascC', 'Download Scenario C CSV Data') ),
-    column(width = 6,downloadButton('downloadDatascD', 'Download Scenario D CSV Data') )
+    column(width = 5, offset= 1 ,downloadButton('downloadDatascC', 'Download Scenario C CSV Data') ),
+    column(width = 5,downloadButton('downloadDatascD', 'Download Scenario D CSV Data') )
     
   ),
   fluidRow(
