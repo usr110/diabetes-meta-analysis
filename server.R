@@ -24,22 +24,29 @@ shinyServer(function(input, output, session){
   
   getPlot <- function (dataset, plotTitle){
     
-    #par(oma=c(10,2,0,0) )
-
     outfile <- tempfile(fileext='.png')
     
     # Generate the PNG
     png(outfile, width=400, height=300)
+
     gg <- ggplot(dataset, aes(dose, RR)) + 
       geom_line(data = dataset) + 
       geom_ribbon(data = dataset, aes(ymin=`Lower Band`,ymax=`Higher Band`),alpha=0.4) +
       coord_cartesian(ylim = c(0, 1)) +
       coord_cartesian(xlim = c(0, 70)) +
-      xlab("Dose") +
+      xlab("\nLeisure Time Physical Activity (LTPA) MET.hr/week") +
       ylab("\nRelative Risk\n") +
-      theme(axis.title.y=element_text(margin=margin(0,20,0,0))) + 
+      # , axis.title.y=element_text(margin=margin(0,20,0,0))
+      #theme_text(hjust = 0.95) + 
       geom_vline(xintercept=summary_table$`LTPA MET.hrs/week`, linetype="dotted", alpha=0.4) + 
-      ggtitle(plotTitle)
+      
+      theme(
+        plot.margin = unit(c(2, 1, 1, 1), "cm"), 
+        plot.title = element_text(size = 15, face = "bold", colour = "black", vjust = 7), 
+        legend.direction = "horizontal",
+        legend.position = c(0.1, 1.05)) + 
+      ggtitle(plotTitle) +
+      labs(fill = "") 
     
     p <- ggplotly(gg)
     dev.off()
