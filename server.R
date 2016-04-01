@@ -2,6 +2,8 @@ scData <- NULL
 shinyServer(function(input, output, session){
   
   output$plotScenarioA <- renderPlotly({
+    
+    
     getPlot(scA, "Scenario A")
     
   })
@@ -21,7 +23,11 @@ shinyServer(function(input, output, session){
   
   
   getPlot <- function (dataset, plotTitle){
-    postscript(file="Rplots.ps")
+
+    outfile <- tempfile(fileext='.png')
+    
+    # Generate the PNG
+    png(outfile, width=400, height=300)
     gg <- ggplot(dataset, aes(dose, RR)) + 
       geom_line(data = dataset) + 
       geom_ribbon(data = dataset, aes(ymin=`Lower Band`,ymax=`Higher Band`),alpha=0.4) +
@@ -32,9 +38,7 @@ shinyServer(function(input, output, session){
       geom_vline(xintercept=summary_table$`LTPA MET.hrs/week`, linetype="dotted", alpha=0.4) + 
       ggtitle(plotTitle)
     
-    
     p <- ggplotly(gg)
-    
     dev.off()
     p
   }
