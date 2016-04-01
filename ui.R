@@ -16,12 +16,9 @@ shinyUI(fluidPage(
   ),
   fluidRow(
     column(width = 6,
-           #showOutput("plotScenarioA", "highcharts")
            plotlyOutput("plotScenarioA")
     ),
-    
     column(width = 6,
-           #showOutput("plotScenarioB","highcharts")
            plotlyOutput("plotScenarioB")
     )
   ),
@@ -37,11 +34,9 @@ shinyUI(fluidPage(
   fluidRow(
     column(width = 6,
            plotlyOutput("plotScenarioC")
-           # showOutput("plotScenarioC","highcharts")
     ),
     column(width = 6,
            plotlyOutput("plotScenarioD")
-           #showOutput("plotScenarioD","highcharts")
     )
   ),
   
