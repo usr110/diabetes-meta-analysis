@@ -6,7 +6,8 @@ choices = c ("Scenario A", "Scenario B", "Scenario C", "Scenario D")
 
 shinyUI(fluidPage(
   useShinyjs(),
-  tags$h2("Diabetes Meta Analysis"),
+  titlePanel("Diabetes Meta Analysis"),
+  #tags$h2("Diabetes Meta Analysis"),
   fluidRow(
     column(width = 6,
            p("This Shiny app is used to display meta analysis of Physical Activity and Type 2 Diabetes"),
