@@ -44,6 +44,7 @@ shinyServer(function(input, output, session){
       theme(
         plot.margin = unit(c(2, 1, 1, 1), "cm"), 
         plot.title = element_text(size = 15, face = "bold", colour = "black", vjust = 7), 
+        # axis.title.y = element_text(colour="grey20",size=20,face="bold"), 
         legend.direction = "horizontal",
         legend.position = c(0.1, 1.05)) + 
       ggtitle(plotTitle) +
@@ -166,7 +167,7 @@ shinyServer(function(input, output, session){
     #       formatRound(columns = names(numericZoneColNames), digits=2)
   })
   
-  shinyjs::onclick("help", shinyjs::toggle(id = "helpText", anim = TRUE))
+  shinyjs::onclick("help", shinyjs::toggle(id = "helpText", anim = F))
   shinyjs::onclick("scAHelp", shinyjs::toggle(id = "scAHelpText", anim = TRUE))
   shinyjs::onclick("scBHelp", shinyjs::toggle(id = "scBHelpText", anim = TRUE))
   shinyjs::onclick("scCHelp", shinyjs::toggle(id = "scCHelpText", anim = TRUE))
