@@ -21,7 +21,7 @@ shinyServer(function(input, output, session){
   
   
   getPlot <- function (dataset, plotTitle){
-    
+    postscript(file="Rplots.ps")
     gg <- ggplot(dataset, aes(dose, RR)) + 
       geom_line(data = dataset) + 
       geom_ribbon(data = dataset, aes(ymin=`Lower Band`,ymax=`Higher Band`),alpha=0.4) +
@@ -31,9 +31,12 @@ shinyServer(function(input, output, session){
       ylab("Relative Risk") +
       geom_vline(xintercept=summary_table$`LTPA MET.hrs/week`, linetype="dotted", alpha=0.4) + 
       ggtitle(plotTitle)
-      
-      p <- ggplotly(gg)
-      p
+    
+    
+    p <- ggplotly(gg)
+    
+    dev.off()
+    p
   }
   
   #   output$plotScenarioA <- renderChart({
