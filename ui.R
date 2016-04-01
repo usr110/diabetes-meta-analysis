@@ -111,7 +111,7 @@ shinyUI(fluidPage(
              DT::dataTableOutput("summaryDT"),
              helpText(HTML("LTPA converted to MET.hr per week with results pooled in a two stage 
                            random effects model. RRs were derived from a common lowest physical activity category within 
-                           each study. Listed exposure levels were chosen to represent meaningful and easy to interpret 
+                           each study. Listed exposure levels <b><i>(as indicated by the dashed lines) </i></b> were chosen to represent meaningful and easy to interpret 
                            PA volumes equivalent to the following: 30 min of MVPA; 1 hour of MVPA; Rounded value to 
                            allow for comparison with GLS PA exposure increment; 150 minutes of PA/current recommended 
                            guidelines; double the recommended guidelines and two high PA exposure levels investigating 
