@@ -115,7 +115,7 @@ shinyUI(fluidPage(
              helpText(HTML("
                            LTPA converted to MET.hr per week with results pooled in a two stage 
                            random effects model. RRs were derived from a common lowest physical activity category 
-                           within each study. Listed exposure levels <b><i>(as indicated by the dashed lines)</i></b> 
+                           within each study. Listed exposure levels (as indicated by the dashed lines) 
                            were chosen to represent meaningful and easy to interpret PA volumes equivalent to 
                            the following: 30 min of MVPA; 1 hour of MVPA; Rounded value to allow for comparison with 
                            Generalized Least Square linear PA exposure increments; 150 minutes of PA/current recommended 
