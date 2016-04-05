@@ -18,6 +18,17 @@ shinyUI(fluidPage(
     )
   ),
   fluidRow(
+    column(width = 10, offset= 1,
+           
+           plotlyOutput("plotMMET")
+    )
+  ),
+  fluidRow(
+    column(width = 5, offset = 5,
+           downloadButton('downloadMMETData', 'Download Marginal MET Data'))
+           
+  ),
+  fluidRow(
     column(width = 5, offset= 1,
            
            plotlyOutput("plotScenarioA"),

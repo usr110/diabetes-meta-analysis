@@ -1,8 +1,14 @@
 scData <- NULL
 shinyServer(function(input, output, session){
   
-  output$plotScenarioA <- renderPlotly({
+  output$plotMMET <- renderPlotly({
     
+    getPlot(mmet, "Marginal MET", xMax = 55,
+            xlab = "Leisure Time Physical Activity (LTPA) Marginal MET.hr/week")
+    
+  })
+  
+  output$plotScenarioA <- renderPlotly({
     
     getPlot(scA, "Scenario A")
     
@@ -22,20 +28,20 @@ shinyServer(function(input, output, session){
   })
   
   
-  getPlot <- function (dataset, plotTitle){
+  getPlot <- function (dataset, plotTitle, xMax = 70, xlab = "Leisure Time Physical Activity (LTPA) MET.hr/week" ){
     
     outfile <- tempfile(fileext='.png')
     
     # Generate the PNG
     png(outfile, width=400, height=300)
-
+    
     gg <- ggplot(dataset, aes(dose, RR)) + 
       geom_line(data = dataset) + 
       geom_ribbon(data = dataset, aes(ymin=`Lower Band`,ymax=`Higher Band`),alpha=0.4) +
-      coord_cartesian(ylim = c(0, 1), xlim = c(0, 70)) +
+      coord_cartesian(ylim = c(0, 1), xlim = c(0, xMax)) +
       scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0)) + 
       # coord_cartesian(xlim = c(0, 70)) +
-      xlab("\nLeisure Time Physical Activity (LTPA) MET.hr/week") +
+      xlab(paste("\n", xlab, "\n")) +
       ylab("\nRelative Risk\n") +
       # , axis.title.y=element_text(margin=margin(0,20,0,0))
       #theme_text(hjust = 0.95) + 
@@ -246,6 +252,26 @@ shinyServer(function(input, output, session){
     content = function(file) {
       # Write to a file specified by the 'file' argument
       write.table(scD, file, sep = ",", row.names = FALSE)
+    }
+  )
+  
+  
+  # downloadHandler() takes two arguments, both functions.
+  # The content function is passed a filename as an argument, and
+  #   it should write out data to that filename.
+  output$downloadMMETData <- downloadHandler(
+    
+    # This function returns a string which tells the client
+    # browser what name to use when saving the file.
+    filename = function() {
+      paste("MMET.csv")
+    },
+    
+    # This function should write data to a file given to it by
+    # the argument 'file'.
+    content = function(file) {
+      # Write to a file specified by the 'file' argument
+      write.table(mmet, file, sep = ",", row.names = FALSE)
     }
   )
   
