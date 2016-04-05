@@ -4,7 +4,7 @@ shinyServer(function(input, output, session){
   output$plotMMET <- renderPlotly({
     
     getPlot(mmet, "Marginal MET", xMax = 55,
-            xlab = "Leisure Time Physical Activity (LTPA) Marginal MET.hr/week")
+            xlab = "Leisure Time Physical Activity (LTPA) Marginal MET.hr/week", interceptMultiplier = (3.5/4.5) )
     
   })
   
@@ -28,7 +28,7 @@ shinyServer(function(input, output, session){
   })
   
   
-  getPlot <- function (dataset, plotTitle, xMax = 70, xlab = "Leisure Time Physical Activity (LTPA) MET.hr/week" ){
+  getPlot <- function (dataset, plotTitle, xMax = 70, xlab = "Leisure Time Physical Activity (LTPA) MET.hr/week", interceptMultiplier = 1 ){
     
     outfile <- tempfile(fileext='.png')
     
@@ -43,14 +43,11 @@ shinyServer(function(input, output, session){
       # coord_cartesian(xlim = c(0, 70)) +
       xlab(paste("\n", xlab, "\n")) +
       ylab("\nRelative Risk\n") +
-      # , axis.title.y=element_text(margin=margin(0,20,0,0))
-      #theme_text(hjust = 0.95) + 
-      geom_vline(xintercept=summary_table$`LTPA MET.hrs/week`, linetype="dotted", alpha=0.4) + 
+      geom_vline(xintercept= (interceptMultiplier * summary_table$`LTPA MET.hrs/week`), linetype="dotted", alpha=0.4) + 
       
       theme(
         plot.margin = unit(c(2, 1, 1, 1), "cm"), 
         plot.title = element_text(size = 15, face = "bold", colour = "black", vjust = 7), 
-        # axis.title.y = element_text(colour="grey20",size=20,face="bold"), 
         legend.direction = "horizontal",
         legend.position = c(0.1, 1.05)) + 
       ggtitle(plotTitle) +
