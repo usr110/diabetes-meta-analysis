@@ -108,14 +108,10 @@ shinyUI(fluidPage(
   
   fluidRow(
     column(width = 12,
-           a(id = "help", "Help?", href = "#"),
-           (div(
-             id = "helpText",
-             DT::dataTableOutput("summaryDT"),
-             includeHTML("helpMET.html")
-           )
-           )
+           DT::dataTableOutput("summaryDT"),
+           includeHTML("helpMET.html")
     )
+    
   ),
   fluidRow(
     column(width = 10, offset= 1,
