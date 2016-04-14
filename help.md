@@ -1,0 +1,7 @@
+---
+title: "Summary"
+output: html_document
+---
+
+LTPA converted to MMET.hr per week with results pooled in a two stage random effects model. RRs were derived from a common lowest physical activity category within each study. Listed exposure levels (as indicated by the dashed lines) were chosen to represent meaningful and easy to interpret PA volumes equivalent to the following: 30 min of MVPA; 1 hour of MVPA; Rounded value to allow for comparison with Generalized Least Square linear PA exposure increments; 150 minutes of PA/current recommended guidelines; double the recommended guidelines and two high PA exposure levels investigating the risk reductions at the higher end of the LTPA spectrum. The bold line indicates the pooled restricted cubic spline model and the grey area indicates the 95% confidence intervals of the pooled curve. Duration assumptions were necessary in 9 out of 27 observation (applied as 45 min/session), and intensity assumptions were necessary in 15 out of 27 observations (applied as LPA=2 MMET, MVPA=3.5MMET, and VPA=7 MMET).
+
