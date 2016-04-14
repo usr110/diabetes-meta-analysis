@@ -66,7 +66,6 @@ shinyServer(function(input, output, session){
     DT::datatable(summary_table, options = list(pageLength = 10), colnames = names(summary_table)) 
   })
   
-  shinyjs::onclick("help", shinyjs::toggle(id = "helpText", anim = F))
   shinyjs::onclick("scAHelp", shinyjs::toggle(id = "scAHelpText", anim = TRUE))
   shinyjs::onclick("scBHelp", shinyjs::toggle(id = "scBHelpText", anim = TRUE))
   shinyjs::onclick("scCHelp", shinyjs::toggle(id = "scCHelpText", anim = TRUE))
