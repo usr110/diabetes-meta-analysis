@@ -112,7 +112,7 @@ shinyUI(fluidPage(
            (div(
              id = "helpText",
              DT::dataTableOutput("summaryDT"),
-             includeMarkdown("help.md")
+             includeHTML("helpMET.html")
            )
            )
     )
@@ -127,5 +127,10 @@ shinyUI(fluidPage(
     column(width = 5, offset = 5,
            downloadButton('downloadMMETData', 'Download Marginal MET Data'))
     
+  ),
+  fluidRow(
+    column(width = 12,
+           includeHTML("helpMMET.html")
+    )
   )
 ))
