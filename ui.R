@@ -114,7 +114,7 @@ shinyUI(fluidPage(
     
   ),
   fluidRow(
-    column(width = 10, offset= 1,
+    column(width = 5, offset= 3,
            
            plotlyOutput("plotMMET")
     )
