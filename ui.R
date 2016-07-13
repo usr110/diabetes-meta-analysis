@@ -110,7 +110,6 @@ shinyUI(fluidPage(
            DT::dataTableOutput("summaryDT"),
            includeHTML("helpMET.html")
     )
-    
   ),
   fluidRow(
     column(width = 5, offset= 3,
