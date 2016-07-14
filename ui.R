@@ -52,9 +52,7 @@ shinyUI(fluidPage(
     )
   ),
   
-  
   fluidRow(
-    
     column(width = 5, offset = 1, downloadButton('downloadDatascA', 'Download Scenario A CSV Data') ),
     column(width = 5, downloadButton('downloadDatascB', 'Download Scenario B CSV Data') )
   ),
@@ -120,7 +118,6 @@ shinyUI(fluidPage(
   fluidRow(
     column(width = 5, offset = 5,
            downloadButton('downloadMMETData', 'Download Marginal MET Data'))
-    
   ),
   fluidRow(
     column(width = 12,
