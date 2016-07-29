@@ -25,6 +25,7 @@ shinyServer(function(input, output, session){
     
   })
   output$plotScenarioD <- renderPlotly({
+    
     getPlot(scD, "Scenario D")
     
   })
