@@ -12,7 +12,6 @@ pkgs <- c(
   "plotly"
 )
 # Which packages do we require?
-# lapply(pkgs, library, character.only = T)
 reqs <- as.numeric(lapply(pkgs, require, character.only = TRUE))
 # Install packages we require
 #if(sum(!reqs) > 0) install.packages(pkgs[!reqs])
