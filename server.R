@@ -15,10 +15,12 @@ shinyServer(function(input, output, session){
   })
   
   output$plotScenarioB <- renderPlotly({
+    
     getPlot(scB, "Scenario B")
     
   })
   output$plotScenarioC <- renderPlotly({
+    
     getPlot(scC, "Scenario C")
     
   })
