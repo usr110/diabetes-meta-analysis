@@ -169,5 +169,4 @@ shinyServer(function(input, output, session){
       write.table(mmet, file, sep = ",", row.names = FALSE)
     }
   )
-  
 })
