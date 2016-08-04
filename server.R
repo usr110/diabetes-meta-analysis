@@ -30,7 +30,6 @@ shinyServer(function(input, output, session){
     
   })
   
-  
   getPlot <- function (dataset, plotTitle, xMax = 70, xlab = "Leisure Time Physical Activity (LTPA) MET.hr/week", interceptMultiplier = 1 ){
     
     outfile <- tempfile(fileext='.png')
